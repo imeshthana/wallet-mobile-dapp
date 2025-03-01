@@ -28,6 +28,13 @@ class _LoginState extends State<Login> {
   }
 
   @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _privateKey.clear();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final contractProvider = Provider.of<Contract>(context);
 

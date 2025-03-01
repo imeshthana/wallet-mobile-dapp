@@ -41,10 +41,20 @@ class _HomeState extends State<Home> {
         await Provider.of<Contract>(context, listen: false)
             .sendToken(_sender.text.toString(), BigInt.parse(_amount.text));
         initializeData();
+        _sender.clear();
+        _amount.clear();
       }
     } catch (e) {
       print(e);
     }
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _sender.clear();
+    _amount.clear();
   }
 
   @override
