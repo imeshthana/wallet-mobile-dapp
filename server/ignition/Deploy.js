@@ -2,7 +2,7 @@ const hre = require("hardhat");
 
 async function main() {
   const DaiToken = await ethers.getContractFactory("DaiToken");
-  const dai = await DaiToken.deploy(100000000000);
+  const dai = await DaiToken.deploy(1000);
   await dai.waitForDeployment();
   console.log("Contract Address", await dai.getAddress());
 }
